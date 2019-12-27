@@ -1,15 +1,26 @@
-export const home = (req,res)=> res.render("home", {pageTitle: "Home"});
+import {videos} from "../db"
+import routes from "../routes";
+export const home = (req,res)=> {
+    res.render("home", {pageTilte:"Home", videos});
+}
 export const search = (req,res)=> {
     const {
         query:{term:searchingBy}
 }= req;
-    res.render("search", {pageTitle: "Search",searchingBy});
+    res.render("search", {pageTitle: "Search",searchingBy, videos});
 }
 export const video = (req,res)=> {
     res.render("video", {pageTitle: "Video"});
 }
-export const upload = (req,res)=> {
+export const getUpload = (req,res)=> {
     res.render("upload", {pageTitle: "Upload"});
+}
+export const postUpload = (req,res)=> {
+    const {
+        body:{file,title,description}
+        }=req;
+        //할일 비디오 생성시 생성되는 id
+    res.redirect(routes.videoDetail(321313));
 }
 
 export const videoDetail = (req,res)=>{
