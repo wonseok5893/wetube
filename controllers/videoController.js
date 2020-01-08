@@ -1,7 +1,14 @@
-import {videos} from "../db"
 import routes from "../routes";
-export const home = (req,res)=> {
-    res.render("home", {pageTilte:"Home", videos});
+import Video from "../models/Video";
+
+export const home = async(req,res)=> {
+    try{
+    const videos = await Video.find({});
+}
+    catch (error){
+    console.log(error); 
+    res.render("home", {pageTilte:"Home", videos:[]});
+}
 }
 export const search = (req,res)=> {
     const {
@@ -20,7 +27,9 @@ export const postUpload = (req,res)=> {
         body:{file,title,description}
         }=req;
         //할일 비디오 생성시 생성되는 id
-    res.redirect(routes.videoDetail(321313));
+    
+    console.log(body);
+    //res.redirect(routes.videoDetail(321313));
 }
 
 export const videoDetail = (req,res)=>{
