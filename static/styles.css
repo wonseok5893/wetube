@@ -165,7 +165,7 @@ main {
     padding: 5px 0px;
     width: 100%;
     max-width: 1200px;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     -webkit-box-align: center;
     -webkit-align-items: center;
        -moz-box-align: center;
@@ -190,3 +190,32 @@ main {
       text-transform: uppercase; }
       .header .header__wrapper .header_column ul li:not(:last-child) {
         margin-right: 15px; }
+    .header .header__wrapper .header_column form {
+      width: 100%; }
+      .header .header__wrapper .header_column form input {
+        padding: 7px 10px;
+        width: 100%;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        font-size: 14px;
+        color: #444444;
+        font-weight: 600; }
+        .header .header__wrapper .header_column form input::-webkit-input-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }
+        .header .header__wrapper .header_column form input:-moz-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }
+        .header .header__wrapper .header_column form input::-moz-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }
+        .header .header__wrapper .header_column form input:-ms-input-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }
+        .header .header__wrapper .header_column form input::-ms-input-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }
+        .header .header__wrapper .header_column form input::placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.7); }
